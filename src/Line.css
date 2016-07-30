@@ -1,0 +1,20 @@
+.Line {
+  clear: both;
+  margin: 5px 0 0 5px;
+}
+
+.Line-cell {
+  width: 40px;
+  height: 40px;
+  margin: 0 5px 5px 0;
+  background-color: lightblue;
+  display: inline-block;
+}
+
+.Line-cell-left {
+  float: left;
+}
+
+.Line-cell-right {
+  float: right;
+}
