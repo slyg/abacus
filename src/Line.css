@@ -9,6 +9,7 @@
   margin: 0 5px 5px 0;
   background-color: lightblue;
   display: inline-block;
+  cursor: pointer;
 }
 
 .Line-cell-left {

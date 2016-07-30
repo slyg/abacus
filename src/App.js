@@ -1,20 +1,31 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './App.css';
-import Line from './Line';
+import LineContainer from './LineContainer';
 
-let lineParams = {
-  left: 2,
-  right: 8
-}
+const colors = [
+  '#eeee99',
+  '#eeee99',
+  '#ee99ee',
+  '#ee99ee',
+  '#cceeee',
+  '#cceeee',
+  '#eeee99',
+  '#eeee99',
+  '#ee99ee',
+  '#ee99ee',
+]
 
-class App extends Component {
+const App = React.createClass({
+
   render() {
     return (
       <div className="App">
-        <Line {...lineParams} />
+        {colors.map(
+          (color, key) => <LineContainer color={color} key={key} />
+        )}
       </div>
     );
   }
-}
+})
 
 export default App;
