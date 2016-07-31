@@ -1,5 +1,5 @@
-import React from 'react';
-import './Line.css';
+import React from 'react'
+import './Line.css'
 
 const Line = ({color, left, right, add, substract}) => {
 
@@ -23,4 +23,4 @@ const Line = ({color, left, right, add, substract}) => {
   )
 }
 
-export default Line;
+export default Line

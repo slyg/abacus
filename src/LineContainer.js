@@ -1,17 +1,16 @@
-import React from 'react';
-import Line from './Line';
-
-const initialState = {
-  left: 10,
-  right: 0
-}
+import React from 'react'
+import Line from './Line'
 
 const App = React.createClass({
 
-  getInitialState: () => initialState,
+  getInitialState: () => ({
+    left: 10,
+    right: 0
+  }),
 
   add: function(i) {
-    const ballsToMove = this.state.left - i;
+    const ballsToMove = this.state.left - i
+
     this.setState({
       left: this.state.left - ballsToMove,
       right: this.state.right + ballsToMove,
@@ -19,26 +18,25 @@ const App = React.createClass({
   },
 
   substract: function(i) {
-    const ballsToMove = 1 + i - this.state.left;
+    const ballsToMove = 1 + i - this.state.left
+
     this.setState({
       left: this.state.left + ballsToMove,
       right: this.state.right - ballsToMove,
     })
   },
 
-  render() {
+  render: function() {
+    const { add, substract } = this
+    const { color } = this.props
 
-    let params = {
+    return <Line {...{
       ...this.state,
-      add: this.add,
-      substract: this.substract,
-      color: this.props.color,
-    }
-
-    return (
-      <Line {...params} />
-    );
+      add,
+      substract,
+      color,
+    }} />
   }
 })
 
-export default App;
+export default App
