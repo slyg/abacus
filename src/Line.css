@@ -1,6 +1,7 @@
 .Line {
   clear: both;
-  margin: 5px 0 0 5px;
+  margin: 5px auto;
+  width: 900px;
   position: relative;
 }
 
@@ -22,13 +23,15 @@
   display: inline-block;
   cursor: pointer;
   position: relative;
-  transition: all 1s ease;
+  transition: left .2s ease;
+  float: left;
+  left: 0px;
 }
 
 .Line-cell-left {
-  float: left;
+  left: 0px;
 }
 
 .Line-cell-right {
-  float: right;
+  left: 440px;
 }

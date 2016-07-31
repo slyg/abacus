@@ -2,14 +2,22 @@ import React from 'react';
 import './Line.css';
 
 const Line = ({color, left, right, add, substract}) => {
+
+  const positions = [
+    ...Array.from(Array(left)).map(() => 'left'),
+    ...Array.from(Array(right)).map(() => 'right')
+  ]
+
   return (
     <div className="Line">
       <div className="Line-cell-rail"></div>
-      {[...Array(left).keys()].map( i =>
-        <div key={i} className="Line-cell Line-cell-left" onClick={add} style={{backgroundColor: color}} />
-      )}
-      {[...Array(right).keys()].map( i =>
-        <div key={i} className="Line-cell Line-cell-right" onClick={substract} style={{backgroundColor: color}} />
+      {positions.map( (pos, i) =>
+        <div
+          key={i}
+          className={"Line-cell Line-cell-" + pos}
+          onClick={() => { pos === 'left' ? add() : substract() }} 
+          style={{backgroundColor: color}}
+          />
       )}
     </div>
   )
