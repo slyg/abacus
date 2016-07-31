@@ -1,9 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import App from './App'
+import LinesContainer from './containers/LinesContainer'
 import './index.css'
 
 ReactDOM.render(
-  <App />,
+  <LinesContainer />,
   document.getElementById('root')
 )

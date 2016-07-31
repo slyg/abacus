@@ -1,7 +1,7 @@
 import React from 'react'
-import Line from './Line'
+import Line from '../components/Line'
 
-const App = React.createClass({
+const LineContainer = React.createClass({
 
   getInitialState: () => ({
     left: 10,
@@ -39,4 +39,4 @@ const App = React.createClass({
   }
 })
 
-export default App
+export default LineContainer
