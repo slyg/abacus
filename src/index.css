@@ -1,4 +1,8 @@
+html {
+  background-color: #eee;
+}
+
 body {
   margin: 10px 0 0 0;
-  padding: 0;
+  padding: 100px 0 0 0;
 }
