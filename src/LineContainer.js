@@ -10,17 +10,19 @@ const App = React.createClass({
 
   getInitialState: () => initialState,
 
-  add: function() {
+  add: function(i) {
+    const ballsToMove = this.state.left - i;
     this.setState({
-      left: this.state.left - 1,
-      right: this.state.right + 1,
+      left: this.state.left - ballsToMove,
+      right: this.state.right + ballsToMove,
     })
   },
 
-  substract: function() {
+  substract: function(i) {
+    const ballsToMove = 1 + i - this.state.left;
     this.setState({
-      left: this.state.left + 1,
-      right: this.state.right - 1,
+      left: this.state.left + ballsToMove,
+      right: this.state.right - ballsToMove,
     })
   },
 

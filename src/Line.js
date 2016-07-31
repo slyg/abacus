@@ -15,7 +15,7 @@ const Line = ({color, left, right, add, substract}) => {
         <div
           key={i}
           className={"Line-cell Line-cell-" + pos}
-          onClick={() => { pos === 'left' ? add() : substract() }} 
+          onClick={() => { if (pos === 'left') { add(i) } else { substract(i); } }}
           style={{backgroundColor: color}}
           />
       )}
