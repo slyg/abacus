@@ -1,9 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import LinesContainer from './containers/LinesContainer'
+import AbacusContainer from './containers/AbacusContainer'
 import './index.css'
 
 ReactDOM.render(
-  <LinesContainer />,
+  <AbacusContainer />,
   document.getElementById('root')
 )

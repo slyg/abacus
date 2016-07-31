@@ -1,11 +1,11 @@
-.Line {
+.Wire {
   clear: both;
   margin: 5px auto;
   width: 900px;
   position: relative;
 }
 
-.Line-cell-rail {
+.Wire-cell-rail {
   height: 2px;
   background-color: #999;
   position: absolute;
@@ -13,7 +13,7 @@
   width: 100%;
 }
 
-.Line-cell {
+.Wire-cell {
   width: 38px;
   height: 38px;
   border: 2px solid #999;
@@ -28,10 +28,10 @@
   left: 0px;
 }
 
-.Line-cell-left {
+.Wire-cell-left {
   left: 0px;
 }
 
-.Line-cell-right {
+.Wire-cell-right {
   left: 440px;
 }

@@ -1,7 +1,7 @@
 import React from 'react'
-import Line from '../components/Line'
+import Wire from '../components/Wire'
 
-const LineContainer = React.createClass({
+const WireContainer = React.createClass({
 
   getInitialState: () => ({
     left: 10,
@@ -30,7 +30,7 @@ const LineContainer = React.createClass({
     const { add, substract } = this
     const { color } = this.props
 
-    return <Line {...{
+    return <Wire {...{
       ...this.state,
       add,
       substract,
@@ -39,4 +39,4 @@ const LineContainer = React.createClass({
   }
 })
 
-export default LineContainer
+export default WireContainer

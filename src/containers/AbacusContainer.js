@@ -1,19 +1,19 @@
 import React from 'react'
-import LineContainer from './LineContainer'
+import WireContainer from './WireContainer'
 import { blue, yellow, red, green, purple } from '../constants/colors'
 
 const colorsSeq = [blue, blue, yellow, yellow, red, red, purple, purple, green, green]
 
-const LinesContainer = React.createClass({
+const WiresContainer = React.createClass({
   render() {
     return (
-      <div className="App">
+      <div>
         {colorsSeq.map(
-          (color, key) => <LineContainer {...{color, key}} />
+          (color, key) => <WireContainer {...{color, key}} />
         )}
       </div>
     )
   }
 })
 
-export default LinesContainer
+export default WiresContainer

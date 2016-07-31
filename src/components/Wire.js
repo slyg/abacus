@@ -1,7 +1,7 @@
 import React from 'react'
-import './Line.css'
+import './Wire.css'
 
-const Line = ({color, left, right, add, substract}) => {
+const Wire = ({color, left, right, add, substract}) => {
 
   const positions = [
     ...Array.from(Array(left)).map(() => 'left'),
@@ -9,12 +9,12 @@ const Line = ({color, left, right, add, substract}) => {
   ]
 
   return (
-    <div className="Line">
-      <div className="Line-cell-rail"></div>
+    <div className="Wire">
+      <div className="Wire-cell-rail"></div>
       {positions.map( (pos, i) =>
         <div
           key={i}
-          className={"Line-cell Line-cell-" + pos}
+          className={"Wire-cell Wire-cell-" + pos}
           onClick={() => { if (pos === 'left') { add(i) } else { substract(i); } }}
           style={{backgroundColor: color}}
           />
@@ -23,4 +23,4 @@ const Line = ({color, left, right, add, substract}) => {
   )
 }
 
-export default Line
+export default Wire
