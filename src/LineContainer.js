@@ -15,7 +15,6 @@ const App = React.createClass({
       left: this.state.left - 1,
       right: this.state.right + 1,
     })
-    console.log(this.state);
   },
 
   substract: function() {

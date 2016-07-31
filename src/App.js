@@ -1,26 +1,20 @@
 import React from 'react';
 import './App.css';
 import LineContainer from './LineContainer';
+import colors from './colors';
 
-const colors = [
-  '#eeee99',
-  '#eeee99',
-  '#ee99ee',
-  '#ee99ee',
-  '#cceeee',
-  '#cceeee',
-  '#eeee99',
-  '#eeee99',
-  '#ee99ee',
-  '#ee99ee',
+const { blue, yellow, red, green, purple } = colors
+
+const lineColors = [
+  blue, yellow, red, purple, green,
+  blue, yellow, red, purple, green,
 ]
 
 const App = React.createClass({
-
   render() {
     return (
       <div className="App">
-        {colors.map(
+        {lineColors.map(
           (color, key) => <LineContainer color={color} key={key} />
         )}
       </div>
