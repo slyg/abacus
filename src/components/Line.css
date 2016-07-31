@@ -23,7 +23,7 @@
   display: inline-block;
   cursor: pointer;
   position: relative;
-  transition: left .2s ease;
+  transition: left .3s ease-out;
   float: left;
   left: 0px;
 }
