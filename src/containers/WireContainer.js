@@ -1,6 +1,9 @@
 import React from 'react'
 import Wire from '../components/Wire'
 
+const tick = new Audio('http://soundbible.com/grab.php?id=2108&type=mp3', {loop: false});
+const tickDelay = 200 // ms
+
 const WireContainer = React.createClass({
 
   getInitialState: () => ({
@@ -15,6 +18,8 @@ const WireContainer = React.createClass({
       left: this.state.left - ballsToMove,
       right: this.state.right + ballsToMove,
     })
+
+    setTimeout(() => tick.play(), tickDelay)
   },
 
   substract: function(i) {
@@ -24,6 +29,8 @@ const WireContainer = React.createClass({
       left: this.state.left + ballsToMove,
       right: this.state.right - ballsToMove,
     })
+
+    setTimeout(() => tick.play(), tickDelay)
   },
 
   render: function() {
