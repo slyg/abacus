@@ -23,7 +23,7 @@
   display: inline-block;
   cursor: pointer;
   position: relative;
-  transition: left .3s ease-out;
+  transition: transform .3s ease-out;
   float: left;
   left: 0px;
 }
@@ -33,5 +33,5 @@
 }
 
 .Wire-cell-right {
-  left: 440px;
+  transform: translate3d(440px, 0px, 0px);
 }
