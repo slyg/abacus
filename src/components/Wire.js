@@ -1,7 +1,8 @@
 import React from 'react'
 import './Wire.css'
+import * as colorCodes from '../constants/colors'
 
-const Wire = ({color, left, right, add, substract}) => {
+const Wire = ({colorName, left, right, add, substract}) => {
 
   const positions = [
     ...Array.from(Array(left)).map(() => 'left'),
@@ -16,7 +17,7 @@ const Wire = ({color, left, right, add, substract}) => {
           key={i}
           className={"Wire-cell Wire-cell-" + pos}
           onClick={() => { if (pos === 'left') { add(i) } else { substract(i); } }}
-          style={{backgroundColor: color}}
+          style={{backgroundColor: (i < (left + right)/2) ? colorCodes[colorName] : colorCodes[colorName + '2']}}
           />
       )}
     </div>

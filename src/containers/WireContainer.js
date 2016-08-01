@@ -28,13 +28,13 @@ const WireContainer = React.createClass({
 
   render: function() {
     const { add, substract } = this
-    const { color } = this.props
+    const { colorName } = this.props
 
     return <Wire {...{
       ...this.state,
       add,
       substract,
-      color,
+      colorName,
     }} />
   }
 })

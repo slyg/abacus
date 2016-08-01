@@ -1,15 +1,14 @@
 import React from 'react'
 import WireContainer from './WireContainer'
-import { blue, yellow, red, green, purple } from '../constants/colors'
 
-const colorsSeq = [blue, blue, yellow, yellow, red, red, purple, purple, green, green]
+const colorNames = ['wood', 'wood', 'yellow', 'yellow','red', 'red', 'green', 'green', 'blue', 'blue']
 
 const WiresContainer = React.createClass({
   render() {
     return (
       <div>
-        {colorsSeq.map(
-          (color, key) => <WireContainer {...{color, key}} />
+        {colorNames.map(
+          (colorName, key) => <WireContainer {...{colorName, key}} />
         )}
       </div>
     )
