@@ -35,3 +35,92 @@
 .Wire-cell-right {
   transform: translate3d(440px, 0px, 0px);
 }
+
+/*
+ * Reponsive - http://stephen.io/mediaqueries/
+ */
+
+/* landscape ipad */
+@media only screen
+  and (min-device-width : 768px)
+  and (max-device-width : 1024px)
+  and (orientation : landscape)
+{
+  .Wire {
+    width: 900px;
+    padding-top: 20px;
+  }
+  .Wire-cell-rail {
+    top: 40px;
+  }
+  .Wire-cell-right {
+    transform: translate3d(440px, 0px, 0px);
+  }
+}
+
+/* portrait ipad */
+@media only screen
+  and (min-device-width : 768px)
+  and (max-device-width : 1024px)
+  and (orientation : portrait)
+{
+  .Wire {
+    width: 700px;
+    padding-top: 30px;
+  }
+  .Wire-cell-rail {
+    top: 50px;
+  }
+  .Wire-cell {
+    width: 28px;
+    height: 38px;
+    border-radius: 20px;
+  }
+  .Wire-cell-right {
+    transform: translate3d(340px, 0px, 0px);
+  }
+}
+
+/* landscape iphone 6 */
+@media only screen
+  and (min-device-width : 375px)
+  and (max-device-width : 667px)
+  and (orientation : landscape)
+{
+  .Wire {
+    width: 600px;
+    padding-top: 3px;
+  }
+  .Wire-cell-rail {
+    top: 13px;
+  }
+  .Wire-cell {
+    width: 18px;
+    height: 18px;
+  }
+  .Wire-cell-right {
+    transform: translate3d(335px, 0px, 0px);
+  }
+}
+
+/* portrait iphone 6 */
+@media only screen
+  and (min-device-width : 375px)
+  and (max-device-width : 667px)
+  and (orientation : portrait)
+{
+  .Wire {
+    width: 300px;
+    padding-top: 20px;
+  }
+  .Wire-cell-rail {
+    top: 30px;
+  }
+  .Wire-cell {
+    width: 13px;
+    height: 18px;
+  }
+  .Wire-cell-right {
+    transform: translate3d(85px, 0px, 0px);
+  }
+}
