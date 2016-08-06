@@ -1,7 +1,9 @@
-const { combineReducers } = require('redux');
+import { combineReducers } from 'redux'
 
-const wiresCollection = require('./wiresCollection')
+import wiresCollection from './wiresCollection'
 
-module.exports = combineReducers({
+const reducer = combineReducers({
   wiresCollection,
 });
+
+export default reducer

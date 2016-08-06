@@ -1,4 +1,6 @@
-const { createStore } = require('redux');
-const reducers = require('./reducers');
+import { createStore } from 'redux'
+import reducers from './reducers'
 
-module.exports = createStore(reducers);
+const store = createStore(reducers, window.devToolsExtension && window.devToolsExtension())
+
+export default store
