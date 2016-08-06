@@ -1,8 +1,7 @@
 import React from 'react'
 import Wire from '../components/Wire'
-
-const tick = new Audio('http://soundbible.com/grab.php?id=2108&type=mp3', {loop: false});
-const tickDelay = 200 // ms
+import { increment, decrement } from '../actions'
+import { tickSound } from '../effects'
 
 const WireContainer = React.createClass({
 
@@ -11,36 +10,24 @@ const WireContainer = React.createClass({
     right: 0
   }),
 
-  add: function(i) {
-    const ballsToMove = this.state.left - i
-
-    this.setState({
-      left: this.state.left - ballsToMove,
-      right: this.state.right + ballsToMove,
-    })
-
-    setTimeout(() => tick.play(), tickDelay)
+  inc: function(i) {
+    this.setState(increment(this.state, i))
+    tickSound()
   },
 
-  substract: function(i) {
-    const ballsToMove = 1 + i - this.state.left
-
-    this.setState({
-      left: this.state.left + ballsToMove,
-      right: this.state.right - ballsToMove,
-    })
-
-    setTimeout(() => tick.play(), tickDelay)
+  dec: function(i) {
+    this.setState(decrement(this.state, i))
+    tickSound()
   },
 
   render: function() {
-    const { add, substract } = this
+    const { inc, dec } = this
     const { colorName } = this.props
 
     return <Wire {...{
       ...this.state,
-      add,
-      substract,
+      inc,
+      dec,
       colorName,
     }} />
   }
