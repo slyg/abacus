@@ -10,14 +10,14 @@ const WireContainer = React.createClass({
     right: 0
   }),
 
+  componentDidUpdate: tickSound,
+
   inc: function(i) {
     this.setState(increment(this.state, i))
-    tickSound()
   },
 
   dec: function(i) {
     this.setState(decrement(this.state, i))
-    tickSound()
   },
 
   render: function() {
