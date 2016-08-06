@@ -7,7 +7,7 @@ const WireContainer = React.createClass({
 
   getInitialState: () => ({
     left: 10,
-    right: 0
+    right: 0,
   }),
 
   componentDidUpdate: tickSound,
@@ -22,14 +22,16 @@ const WireContainer = React.createClass({
 
   render: function() {
     const { inc, dec } = this
-    const { colorName } = this.props
-
-    return <Wire {...{
+    const { colorNameLeft, colorNameRight } = this.props
+    const params = {
       ...this.state,
       inc,
       dec,
-      colorName,
-    }} />
+      colorNameLeft,
+      colorNameRight,
+    }
+
+    return <Wire {...params} />
   }
 })
 

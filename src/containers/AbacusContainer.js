@@ -1,18 +1,23 @@
 import React from 'react'
 import WireContainer from './WireContainer'
 
-const colorNames = ['wood', 'wood', 'yellow', 'yellow','red', 'red', 'green', 'green', 'blue', 'blue']
+const wireLine = ([colorNameLeft, colorNameRight], key) =>
+  <WireContainer {...{colorNameLeft, colorNameRight, key}} />
 
-const WiresContainer = React.createClass({
-  render() {
-    return (
-      <div>
-        {colorNames.map(
-          (colorName, key) => <WireContainer {...{colorName, key}} />
-        )}
-      </div>
-    )
-  }
-})
+const colorNames = [
+  [ 'wood',    'wood2'   ],
+  [ 'wood',    'wood2'   ],
+  [ 'yellow',  'yellow2' ],
+  [ 'yellow',  'yellow2' ],
+  [ 'red',     'red2'    ],
+  [ 'red',     'red2'    ],
+  [ 'green',   'green2'  ],
+  [ 'green',   'green2'  ],
+  [ 'blue',    'blue2'   ],
+  [ 'blue',    'blue2'   ],
+]
+
+const WiresContainer = () =>
+  <div>{colorNames.map(wireLine)}</div>
 
 export default WiresContainer
