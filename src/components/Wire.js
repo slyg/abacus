@@ -1,6 +1,5 @@
 import React from 'react'
 import './Wire.css'
-import * as colorCodes from '../constants/colors'
 import { LEFT, RIGHT } from '../constants/positions'
 
 const Wire = ({colorNameLeft, colorNameRight, left, right, increment, decrement}) => {
@@ -16,9 +15,13 @@ const Wire = ({colorNameLeft, colorNameRight, left, right, increment, decrement}
       {positions.map( (pos, i) =>
         <div
           key={i}
-          className={"Wire-cell Wire-cell-" + pos}
-          onClick={() => { if (pos === 'left') { increment(i) } else { decrement(i); } }}
-          style={{backgroundColor: colorCodes[(i < (left + right)/2) ? colorNameLeft : colorNameRight]}}
+          className={`Wire-cell Wire-cell-${pos} Wire-cell-color-${(i < (left + right)/2) ? colorNameLeft : colorNameRight}`}
+          onClick={() => {
+            if (pos === LEFT)
+              increment(i)
+            else
+              decrement(i)
+          }}
         />
       )}
     </div>
