@@ -22,7 +22,7 @@ const Abacus = ({wiresCollection}) => {
     <div>
       {wiresCollection.map( (wire, wireIndex) => {
         const [colorNameLeft, colorNameRight] = colorNames[wireIndex]
-        return <WireContainer {...{colorNameLeft, colorNameRight, key: wireIndex}} />
+        return <WireContainer {...{colorNameLeft, colorNameRight, wireIndex, key: wireIndex}} />
       })}
     </div>
   )

@@ -1,38 +1,15 @@
-import React from 'react'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
 import Wire from '../components/Wire'
-import { increment, decrement } from '../actions'
-import { tickSound } from '../effects'
+import { increment, decrement } from '../actionsCreators'
 
-const WireContainer = React.createClass({
+const mapStateToProps = ({wiresCollection}, {wireIndex}) =>
+  ({...wiresCollection[wireIndex]})
 
-  getInitialState: () => ({
-    left: 10,
-    right: 0,
-  }),
+const mapDispatchToProps = (dispatch, {wireIndex}) =>
+  bindActionCreators({
+    increment: increment(wireIndex),
+    decrement: decrement(wireIndex)
+  }, dispatch)
 
-  componentDidUpdate: tickSound,
-
-  inc: function(i) {
-    this.setState(increment(this.state, i))
-  },
-
-  dec: function(i) {
-    this.setState(decrement(this.state, i))
-  },
-
-  render: function() {
-    const { inc, dec } = this
-    const { colorNameLeft, colorNameRight } = this.props
-    const params = {
-      ...this.state,
-      inc,
-      dec,
-      colorNameLeft,
-      colorNameRight,
-    }
-
-    return <Wire {...params} />
-  }
-})
-
-export default WireContainer
+export default connect(mapStateToProps, mapDispatchToProps)(Wire)
