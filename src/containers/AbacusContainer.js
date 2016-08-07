@@ -1,8 +1,8 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import WireContainer from './WireContainer'
 
-const wireLine = ([colorNameLeft, colorNameRight], key) =>
-  <WireContainer {...{colorNameLeft, colorNameRight, key}} />
+const mapStateToProps = ({wiresCollection}) => ({wiresCollection});
 
 const colorNames = [
   [ 'wood',    'wood2'   ],
@@ -17,7 +17,15 @@ const colorNames = [
   [ 'blue',    'blue2'   ],
 ]
 
-const WiresContainer = () =>
-  <div>{colorNames.map(wireLine)}</div>
+const Abacus = ({wiresCollection}) => {
+  return (
+    <div>
+      {wiresCollection.map( (wire, wireIndex) => {
+        const [colorNameLeft, colorNameRight] = colorNames[wireIndex]
+        return <WireContainer {...{colorNameLeft, colorNameRight, key: wireIndex}} />
+      })}
+    </div>
+  )
+}
 
-export default WiresContainer
+export default connect(mapStateToProps)(Abacus)
