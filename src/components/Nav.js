@@ -1,11 +1,12 @@
 import React from 'react'
 import './Nav.css'
 
-const Nav = ({reset, randomize}) => {
+const Nav = ({reset, randomize, randomizeStorm}) => {
   return (
     <nav className="Nav">
       <button onClick={() => {reset()}} >Reset</button>
       <button onClick={() => {randomize()}} >Randomize</button>
+      <button onClick={() => {randomizeStorm()}} >Storm</button>
     </nav>
   )
 }
