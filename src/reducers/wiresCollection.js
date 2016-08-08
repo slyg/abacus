@@ -1,4 +1,4 @@
-import { INC, DEC, RES, NOOP } from '../constants/actionTypes'
+import { INC, DEC, RES, RAN, NOOP } from '../constants/actionTypes'
 import wire from './wire'
 
 const wiresNumber = 10
@@ -26,7 +26,27 @@ const reducer = (state = initialState, action) => {
     case RES:
       return state.map(
         (item, i) => {
-          return wire(state[wireIndex], {type})
+          return wire(state[i], {type})
+        }
+      )
+
+    case RAN:
+      const randomNumber = Math.floor(Math.random() * 100)
+      const units = randomNumber % 10
+      const dozens = Math.floor(randomNumber/10)
+
+      return state.map(
+        (item, i) => {
+
+          if (i < dozens) {
+            return wire(state[i], {type: INC, index: 0})
+          }
+
+          if (i === dozens) {
+            return wire(state[i], {type: INC, index: 10 - units})
+          }
+
+          return wire(state[i], {type: RES})
         }
       )
 

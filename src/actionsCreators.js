@@ -1,4 +1,4 @@
-import { INC, DEC, RES } from './constants/actionTypes'
+import { INC, DEC, RES, RAN } from './constants/actionTypes'
 
 export const increment = wireIndex => index => ({
   type: INC,
@@ -14,4 +14,8 @@ export const decrement = wireIndex => index => ({
 
 export const reset = () => ({
   type: RES
+})
+
+export const randomize = () => ({
+  type: RAN
 })
