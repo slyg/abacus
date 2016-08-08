@@ -1,4 +1,12 @@
 .Nav {
   position: fixed;
-  bottom: 0;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+}
+
+.Nav button {
+  padding: 5px 7px;
+  margin-left: 3px;
+  font-size: 15px;
 }
