@@ -1,4 +1,4 @@
-import { INC, DEC, NOOP } from '../constants/actionTypes'
+import { INC, DEC, RES, NOOP } from '../constants/actionTypes'
 import wire from './wire'
 
 const wiresNumber = 10
@@ -22,6 +22,13 @@ const reducer = (state = initialState, action) => {
         }
       )
     }
+
+    case RES:
+      return state.map(
+        (item, i) => {
+          return wire(state[wireIndex], {type})
+        }
+      )
 
     default:
       return state

@@ -1,4 +1,4 @@
-import { INC, DEC } from '../constants/actionTypes'
+import { INC, DEC, RES } from '../constants/actionTypes'
 
 const initialState = {
   left: 10,
@@ -28,6 +28,9 @@ const reducer = (state = initialState, action) => {
         right: state.right - ballsToMove,
       }
     }
+
+    case RES:
+      return initialState
 
     default:
       return state
