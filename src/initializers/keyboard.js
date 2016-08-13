@@ -1,4 +1,4 @@
-import { moveFocus } from '../actionsCreators'
+import { moveFocus, randomize, randomizeStorm, reset } from '../actionsCreators'
 import { UP, DOWN, LEFT, RIGHT } from '../constants/directions'
 
 const initializer = store => {
@@ -18,6 +18,15 @@ const initializer = store => {
         break
       case 40:
         dispatch(moveFocus(DOWN))
+        break
+      case 82:
+        dispatch(randomize())
+        break
+      case 83:
+        dispatch(randomizeStorm())
+        break
+      case 90:
+        dispatch(reset())
         break
       default:
     }

@@ -22,9 +22,9 @@ const SoundIcon = ({muted}) => {
 const Nav = ({reset, randomize, randomizeStorm, toggleMute, soundMuted}) => {
   return (
     <nav className="Nav">
-      <button onClick={() => {reset()}} >Reset</button>
-      <button onClick={() => {randomize()}} >Random</button>
-      <button onClick={() => {randomizeStorm()}} >Storm</button>
+      <button onClick={() => {reset()}} >Reset (Z)</button>
+      <button onClick={() => {randomize()}} >Random (R)</button>
+      <button onClick={() => {randomizeStorm()}} >Storm (S)</button>
       <button onClick={() => {toggleMute()}} title={soundMuted ? 'Unmute' :  'Mute'}>
         <SoundIcon muted={soundMuted} />
       </button>

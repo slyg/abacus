@@ -5,9 +5,9 @@ import store from './store'
 import AbacusContainer from './containers/AbacusContainer'
 import NavContainer from './containers/NavContainer'
 import './index.css'
-import arrowPadInitializer from './initializers/arrowPad'
+import keyboardInitializer from './initializers/keyboard'
 
-arrowPadInitializer(store)
+keyboardInitializer(store)
 
 ReactDOM.render(
   <Provider store={store}>
