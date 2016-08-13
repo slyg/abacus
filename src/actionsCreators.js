@@ -1,4 +1,12 @@
-import { INCREMENT, DECREMENT, RESET, RANDOM, RANDOM_STORM, TOGGLE_MUTE } from './constants/actionTypes'
+import
+  { INCREMENT
+  , DECREMENT
+  , RESET
+  , RANDOM
+  , RANDOM_STORM
+  , TOGGLE_MUTE
+  , MOVE_FOCUS
+  } from './constants/actionTypes'
 
 export const increment = wireIndex => index => ({
   type: INCREMENT,
@@ -26,4 +34,9 @@ export const randomizeStorm = () => ({
 
 export const toggleMute = () => ({
   type: TOGGLE_MUTE
+})
+
+export const moveFocus = direction => ({
+  type: MOVE_FOCUS,
+  direction
 })
