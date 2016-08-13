@@ -1,4 +1,5 @@
-import { INCREMENT, DECREMENT, RESET, RANDOM, NOOP, HAS_FOCUS } from '../constants/actionTypes'
+import { INCREMENT, DECREMENT, RESET, RANDOM, NOOP, HAS_FOCUS, MOVE_FOCUS } from '../constants/actionTypes'
+import { LEFT, RIGHT } from '../constants/directions'
 import wire from './wire'
 
 const wiresNumber = 10
@@ -6,7 +7,7 @@ const initialState = Array.from(Array(wiresNumber)).map(i => wire(undefined, {ty
 
 const reducer = (state = initialState, action) => {
 
-  const { type, index, wireIndex } = action
+  const { type, wireIndex, direction } = action
 
   switch (type) {
 
@@ -29,10 +30,30 @@ const reducer = (state = initialState, action) => {
           if (i === wireIndex) {
             return wire(state[i], action)
           } else {
-            return wire(state[i], {type, index: -1})
+            return wire(state[i], {type: HAS_FOCUS, index: -1})
           }
         }
       )
+    }
+
+    case MOVE_FOCUS: {
+
+      switch (direction) {
+        
+        case LEFT:
+        case RIGHT:
+          return state.map(
+            (item, i) => {
+              return wire(state[i], action)
+            }
+          )
+
+        default:
+          return state.map(
+            (item, i) => wire(state[i], {type: HAS_FOCUS, index: -1})
+          )
+
+      }
     }
 
     case RESET:

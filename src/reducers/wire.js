@@ -1,4 +1,5 @@
-import { INCREMENT, DECREMENT, RESET, HAS_FOCUS } from '../constants/actionTypes'
+import { INCREMENT, DECREMENT, RESET, HAS_FOCUS, MOVE_FOCUS } from '../constants/actionTypes'
+import { LEFT, RIGHT } from '../constants/directions'
 
 const initialState = {
   left: 10,
@@ -8,7 +9,7 @@ const initialState = {
 
 const reducer = (state = initialState, action) => {
 
-  const { type, index } = action
+  const { type, index, direction } = action
 
   switch (type) {
 
@@ -34,6 +35,41 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         focusIndex: index
+      }
+    }
+
+    case MOVE_FOCUS: {
+
+      if (state.focusIndex === -1) {
+        return state
+      }
+
+      let newFocusIndex;
+
+      switch (direction) {
+        case LEFT:
+          if (state.focusIndex > 0) {
+            newFocusIndex = state.focusIndex - 1
+          } else {
+            newFocusIndex = 0
+          }
+          break
+
+        case RIGHT:
+          if (state.focusIndex < 9) {
+            newFocusIndex = state.focusIndex + 1
+          } else {
+            newFocusIndex = 9
+          }
+          break
+
+        default:
+          newFocusIndex = -1
+      }
+
+      return {
+        ...state,
+        focusIndex: newFocusIndex
       }
     }
 
