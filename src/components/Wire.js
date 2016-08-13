@@ -13,7 +13,7 @@ const Wire = ({colorNameLeft, colorNameRight, left, right, increment, decrement}
     <div className="Wire">
       <div className="Wire-cell-rail"></div>
       {positions.map( (pos, i) =>
-        <div
+        <button
           key={i}
           className={`Wire-cell Wire-cell-${pos} Wire-cell-color-${(i < (left + right)/2) ? colorNameLeft : colorNameRight}`}
           onClick={() => {
