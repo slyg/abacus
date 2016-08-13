@@ -5,19 +5,19 @@ const initializer = store => {
 
   const { dispatch } = store
 
-  document.onkeydown = function(e) {
-    switch (e.keyCode) {
+  document.onkeydown = function({keyCode, shiftKey}) {
+    switch (keyCode) {
       case 37:
-        dispatch(moveFocus(LEFT))
+        dispatch(moveFocus(LEFT, shiftKey))
         break
       case 38:
-        dispatch(moveFocus(UP))
+        dispatch(moveFocus(UP, shiftKey))
         break
       case 39:
-        dispatch(moveFocus(RIGHT))
+        dispatch(moveFocus(RIGHT, shiftKey))
         break
       case 40:
-        dispatch(moveFocus(DOWN))
+        dispatch(moveFocus(DOWN, shiftKey))
         break
       case 82:
         dispatch(randomize())

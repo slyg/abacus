@@ -37,9 +37,10 @@ export const toggleMute = () => ({
   type: TOGGLE_MUTE
 })
 
-export const moveFocus = direction => ({
+export const moveFocus = (direction, toTheEdge) => ({
   type: MOVE_FOCUS,
-  direction
+  direction,
+  toTheEdge
 })
 
 export const hasFocus = wireIndex => index => ({

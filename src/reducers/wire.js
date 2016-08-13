@@ -9,7 +9,7 @@ const initialState = {
 
 const reducer = (state = initialState, action) => {
 
-  const { type, index, direction } = action
+  const { type, index, direction, toTheEdge } = action
 
   switch (type) {
 
@@ -49,7 +49,7 @@ const reducer = (state = initialState, action) => {
       switch (direction) {
         case LEFT:
           if (state.focusIndex > 0) {
-            newFocusIndex = state.focusIndex - 1
+            newFocusIndex = toTheEdge ? 0 : state.focusIndex - 1
           } else {
             newFocusIndex = 0
           }
@@ -57,7 +57,7 @@ const reducer = (state = initialState, action) => {
 
         case RIGHT:
           if (state.focusIndex < 9) {
-            newFocusIndex = state.focusIndex + 1
+            newFocusIndex = toTheEdge ? 9 : state.focusIndex + 1
           } else {
             newFocusIndex = 9
           }
