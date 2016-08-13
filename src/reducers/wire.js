@@ -74,7 +74,10 @@ const reducer = (state = initialState, action) => {
     }
 
     case RESET:
-      return initialState
+      return {
+        ...initialState,
+        focusIndex: state.focusIndex
+      }
 
     default:
       return state
