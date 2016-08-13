@@ -1,8 +1,9 @@
-import { INCREMENT, DECREMENT, RESET } from '../constants/actionTypes'
+import { INCREMENT, DECREMENT, RESET, HAS_FOCUS } from '../constants/actionTypes'
 
 const initialState = {
   left: 10,
   right: 0,
+  focusIndex: -1
 }
 
 const reducer = (state = initialState, action) => {
@@ -26,6 +27,13 @@ const reducer = (state = initialState, action) => {
         ...state,
         left: state.left + ballsToMove,
         right: state.right - ballsToMove,
+      }
+    }
+
+    case HAS_FOCUS: {
+      return {
+        ...state,
+        focusIndex: index
       }
     }
 

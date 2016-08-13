@@ -1,4 +1,4 @@
-import { INCREMENT, DECREMENT, RESET, RANDOM, NOOP } from '../constants/actionTypes'
+import { INCREMENT, DECREMENT, RESET, RANDOM, NOOP, HAS_FOCUS } from '../constants/actionTypes'
 import wire from './wire'
 
 const wiresNumber = 10
@@ -18,6 +18,18 @@ const reducer = (state = initialState, action) => {
             return wire(state[wireIndex], {type, index})
           } else {
             return item
+          }
+        }
+      )
+    }
+
+    case HAS_FOCUS: {
+      return state.map(
+        (item, i) => {
+          if (i === wireIndex) {
+            return wire(state[wireIndex], {type, index})
+          } else {
+            return wire(state[wireIndex], {type, index: -1})
           }
         }
       )

@@ -6,6 +6,7 @@ import
   , RANDOM_STORM
   , TOGGLE_MUTE
   , MOVE_FOCUS
+  , HAS_FOCUS
   } from './constants/actionTypes'
 
 export const increment = wireIndex => index => ({
@@ -39,4 +40,10 @@ export const toggleMute = () => ({
 export const moveFocus = direction => ({
   type: MOVE_FOCUS,
   direction
+})
+
+export const hasFocus = wireIndex => index => ({
+  type: HAS_FOCUS,
+  wireIndex,
+  index
 })
