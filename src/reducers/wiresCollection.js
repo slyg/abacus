@@ -15,7 +15,7 @@ const reducer = (state = initialState, action) => {
       return state.map(
         (item, i) => {
           if (i === wireIndex) {
-            return wire(state[wireIndex], {type, index})
+            return wire(state[i], action)
           } else {
             return item
           }
@@ -27,9 +27,9 @@ const reducer = (state = initialState, action) => {
       return state.map(
         (item, i) => {
           if (i === wireIndex) {
-            return wire(state[wireIndex], {type, index})
+            return wire(state[i], action)
           } else {
-            return wire(state[wireIndex], {type, index: -1})
+            return wire(state[i], {type, index: -1})
           }
         }
       )
@@ -38,7 +38,7 @@ const reducer = (state = initialState, action) => {
     case RESET:
       return state.map(
         (item, i) => {
-          return wire(state[i], {type})
+          return wire(state[i], action)
         }
       )
 
