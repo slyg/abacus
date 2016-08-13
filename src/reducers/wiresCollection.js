@@ -38,42 +38,29 @@ const reducer = (state = initialState, action) => {
 
     case MOVE_FOCUS: {
 
+      const handleWireFocus = (_, i, state) => {
+        if (state[i].focusIndex > -1) {
+          return state[i]
+        }
+        if (i > 0 && state[i - 1].focusIndex > -1) {
+          return wire(state[i], {type: HAS_FOCUS, index: 0})
+        }
+        return wire(state[i], {type: HAS_FOCUS, index: -1})
+      }
+
       switch (direction) {
 
         case LEFT:
         case RIGHT:
           return state.map(
-            (item, i) => {
-              return wire(state[i], action)
-            }
+            (item, i) => wire(state[i], action)
           )
 
         case DOWN:
-          return state.map(
-            (item, i) => {
-              if (i === 9) {
-                return wire(state[i], {type: HAS_FOCUS, index: 0})
-              }
-              if (state[i].focusIndex > -1) {
-                return wire(state[i], {type: HAS_FOCUS, index: -1})
-              }
-              if (i > 0 && state[i - 1].focusIndex > -1) {
-                return wire(state[i], {type: HAS_FOCUS, index: 0})
-              }
-              return state[i]
-            }
-          )
+          return state.map(handleWireFocus)
 
         case UP:
-          return state.map(
-            (item, i) => {
-              if (i < 9 && state[i + 1].focusIndex > -1) {
-                return wire(state[i], {type: HAS_FOCUS, index: 0})
-              }
-              return state[i]
-            }
-          )
-
+          return state.reverse().map(handleWireFocus).reverse()
 
         default:
           return state.map(
