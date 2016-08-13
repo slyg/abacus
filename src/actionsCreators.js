@@ -1,4 +1,4 @@
-import { INC, DEC, RES, RAN, RANSTORM } from './constants/actionTypes'
+import { INC, DEC, RES, RAN, RANSTORM, TOGGLE_MUTE } from './constants/actionTypes'
 
 export const increment = wireIndex => index => ({
   type: INC,
@@ -22,4 +22,8 @@ export const randomize = () => ({
 
 export const randomizeStorm = () => ({
   type: RANSTORM
+})
+
+export const toggleMute = () => ({
+  type: TOGGLE_MUTE
 })

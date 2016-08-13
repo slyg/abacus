@@ -39,6 +39,11 @@ const middleware = store => next => action => {
 
   next(action)
 
+  tickPool.forEach(sound => {
+    sound.muted = store.getState().sound.muted
+    return sound
+  })
+
 }
 
 export default middleware

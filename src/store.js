@@ -1,10 +1,10 @@
 import { compose, createStore, applyMiddleware } from 'redux'
 import reducers from './reducers'
-import tickMiddleware from './middleware/tick'
+import soundMiddleware from './middleware/sound'
 import randomizeStormMiddleware from './middleware/randomizeStorm'
 
 const createStoreWithMiddleware = compose(
-  applyMiddleware(tickMiddleware, randomizeStormMiddleware)
+  applyMiddleware(soundMiddleware, randomizeStormMiddleware)
 )(createStore)
 
 const store = createStoreWithMiddleware(reducers, window.devToolsExtension && window.devToolsExtension())
