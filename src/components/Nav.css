@@ -7,27 +7,32 @@
   background-color: rgba(1,1,1,0.3);
 }
 
+.Nav svg {
+  width: 14px;
+  height: 14px;
+}
+
 .Nav button {
-	box-shadow: 0px 1px 0px 0px #1c1b18;
-	background-color: #ffe5bc;
-	border-radius: 15px;
-	border: 2px solid #333029;
-	display: inline-block;
-	cursor: pointer;
-	color: #505739;
-	font-family: Arial;
-	font-size: 14px;
-	font-weight: bold;
-	padding: 12px 16px;
-	text-decoration: none;
-	text-shadow: 0px 1px 0px #ffffff;
+  box-shadow: 0px 1px 0px 0px #1c1b18;
+  background-color: #ffe5bc;
+  border-radius: 15px;
+  border: 2px solid #333333;
+  display: inline-block;
+  cursor: pointer;
+  color: #444444;
+  font-family: Arial;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 12px 16px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #ffffff;
 }
 
 .Nav button:hover {
-	background-color: #ffdca3;
+  background-color: #ffdca3;
 }
 
 .Nav button:active {
-	position: relative;
-	top: 1px;
+  position: relative;
+  top: 1px;
 }
