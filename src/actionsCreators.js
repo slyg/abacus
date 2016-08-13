@@ -1,27 +1,27 @@
-import { INC, DEC, RES, RAN, RANSTORM, TOGGLE_MUTE } from './constants/actionTypes'
+import { INCREMENT, DECREMENT, RESET, RANDOM, RANDOM_STORM, TOGGLE_MUTE } from './constants/actionTypes'
 
 export const increment = wireIndex => index => ({
-  type: INC,
+  type: INCREMENT,
   wireIndex,
   index
 })
 
 export const decrement = wireIndex => index => ({
-  type: DEC,
+  type: DECREMENT,
   wireIndex,
   index
 })
 
 export const reset = () => ({
-  type: RES
+  type: RESET
 })
 
 export const randomize = () => ({
-  type: RAN
+  type: RANDOM
 })
 
 export const randomizeStorm = () => ({
-  type: RANSTORM
+  type: RANDOM_STORM
 })
 
 export const toggleMute = () => ({

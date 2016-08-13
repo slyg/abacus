@@ -1,10 +1,10 @@
-import { RANSTORM } from '../constants/actionTypes'
+import { RANDOM_STORM } from '../constants/actionTypes'
 import { randomize } from '../actionsCreators'
 
 const middleware = store => next => action => {
 
   switch (action.type) {
-    case RANSTORM:
+    case RANDOM_STORM:
       const effect = setInterval(() => {
         window.requestAnimationFrame(() => store.dispatch(randomize()))
       }, 125)

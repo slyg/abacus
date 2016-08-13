@@ -1,5 +1,5 @@
 import reducer from './wiresCollection'
-import { INC, DEC, NOOP } from '../constants/actionTypes'
+import { INCREMENT, DECREMENT, NOOP } from '../constants/actionTypes'
 import { expect } from 'chai'
 
 describe('wireList reducer', () => {
@@ -10,10 +10,10 @@ describe('wireList reducer', () => {
       Array.from(Array(10)).map(() => ({ left: 10, right: 0 }))
     )
   })
-  it('should INC the right wire', () => {
+  it('should INCREMENT the right wire', () => {
     const state0 = reducer(undefined, {type: NOOP})
-    const state1 = reducer(state0, {type: INC, wireIndex: 2, index: 3})
-    const state2 = reducer(state1, {type: INC, wireIndex: 3, index: 0})
+    const state1 = reducer(state0, {type: INCREMENT, wireIndex: 2, index: 3})
+    const state2 = reducer(state1, {type: INCREMENT, wireIndex: 3, index: 0})
     expect(
       state2
     ).to.eql(

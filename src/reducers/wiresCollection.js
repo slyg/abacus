@@ -1,4 +1,4 @@
-import { INC, DEC, RES, RAN, NOOP } from '../constants/actionTypes'
+import { INCREMENT, DECREMENT, RESET, RANDOM, NOOP } from '../constants/actionTypes'
 import wire from './wire'
 
 const wiresNumber = 10
@@ -10,8 +10,8 @@ const reducer = (state = initialState, action) => {
 
   switch (type) {
 
-    case INC:
-    case DEC: {
+    case INCREMENT:
+    case DECREMENT: {
       return state.map(
         (item, i) => {
           if (i === wireIndex) {
@@ -23,14 +23,14 @@ const reducer = (state = initialState, action) => {
       )
     }
 
-    case RES:
+    case RESET:
       return state.map(
         (item, i) => {
           return wire(state[i], {type})
         }
       )
 
-    case RAN:
+    case RANDOM:
       const randomNumber = Math.floor(Math.random() * 100)
       const units = randomNumber % 10
       const dozens = Math.floor(randomNumber/10)
@@ -39,14 +39,14 @@ const reducer = (state = initialState, action) => {
         (item, i) => {
 
           if (i < dozens) {
-            return wire(state[i], {type: INC, index: 0})
+            return wire(state[i], {type: INCREMENT, index: 0})
           }
 
           if (i === dozens) {
-            return wire(state[i], {type: INC, index: 10 - units})
+            return wire(state[i], {type: INCREMENT, index: 10 - units})
           }
 
-          return wire(state[i], {type: RES})
+          return wire(state[i], {type: RESET})
         }
       )
 

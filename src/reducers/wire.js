@@ -1,4 +1,4 @@
-import { INC, DEC, RES } from '../constants/actionTypes'
+import { INCREMENT, DECREMENT, RESET } from '../constants/actionTypes'
 
 const initialState = {
   left: 10,
@@ -11,7 +11,7 @@ const reducer = (state = initialState, action) => {
 
   switch (type) {
 
-    case INC: {
+    case INCREMENT: {
       const ballsToMove = state.left - index
       return {
         ...state,
@@ -20,7 +20,7 @@ const reducer = (state = initialState, action) => {
       }
     }
 
-    case DEC: {
+    case DECREMENT: {
       const ballsToMove = 1 + index - state.left
       return {
         ...state,
@@ -29,7 +29,7 @@ const reducer = (state = initialState, action) => {
       }
     }
 
-    case RES:
+    case RESET:
       return initialState
 
     default:

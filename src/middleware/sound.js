@@ -1,4 +1,4 @@
-import { INC, DEC, RAN, RES } from '../constants/actionTypes'
+import { INCREMENT, DECREMENT, RANDOM, RESET } from '../constants/actionTypes'
 import { tick as soundOrigin } from '../constants/sounds'
 
 const tickDelay = 200 // ms
@@ -22,13 +22,13 @@ const tickSound = () => {
 const middleware = store => next => action => {
 
   switch (action.type) {
-    case INC:
-    case DEC:
-    case RAN:
+    case INCREMENT:
+    case DECREMENT:
+    case RANDOM:
       tickSound()
       break
 
-    case RES:
+    case RESET:
       if(store.getState().wiresCollection.some(({right}) => right > 0)) {
         tickSound()
       }
