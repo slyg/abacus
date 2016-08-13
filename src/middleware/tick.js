@@ -1,14 +1,12 @@
-import { INC, DEC } from '../constants/actionTypes'
+import { INC, DEC, RAN, RES } from '../constants/actionTypes'
 
 const soundOrigin = 'http://soundbible.com/grab.php?id=2108&type=mp3'
 const tickDelay = 200 // ms
-const poolSize = 3
+const poolSize = 10 // number of audio channels
 const tickPool = Array.from(Array(poolSize)).map(() => new Audio(soundOrigin, {loop: false}))
 
-function* gen (n = 0) {
-  yield 0
-  yield 1
-  yield 2
+function* gen() {
+  yield* Array.from(Array(poolSize)).map((_, i) => i)
   yield* gen()
 }
 
@@ -24,7 +22,14 @@ const middleware = store => next => action => {
   switch (action.type) {
     case INC:
     case DEC:
+    case RAN:
       tickSound()
+      break
+      
+    case RES:
+      if(store.getState().wiresCollection.some(({right}) => right > 0)) {
+        tickSound()
+      }
       break
 
     default:
