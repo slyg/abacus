@@ -1,9 +1,11 @@
 import { INC, DEC, RAN, RES } from '../constants/actionTypes'
+import { tick as soundOrigin } from '../constants/sounds'
 
-const soundOrigin = 'http://soundbible.com/grab.php?id=2108&type=mp3'
 const tickDelay = 200 // ms
 const poolSize = 10 // number of audio channels
-const tickPool = Array.from(Array(poolSize)).map(() => new Audio(soundOrigin, {loop: false}))
+
+const audio = new Audio(soundOrigin, {loop: false})
+const tickPool = Array.from(Array(poolSize)).map(() => audio.cloneNode())
 
 function* gen() {
   yield* Array.from(Array(poolSize)).map((_, i) => i)
@@ -25,7 +27,7 @@ const middleware = store => next => action => {
     case RAN:
       tickSound()
       break
-      
+
     case RES:
       if(store.getState().wiresCollection.some(({right}) => right > 0)) {
         tickSound()
