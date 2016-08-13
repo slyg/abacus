@@ -1,5 +1,5 @@
 import { INCREMENT, DECREMENT, RESET, RANDOM, NOOP, HAS_FOCUS, MOVE_FOCUS } from '../constants/actionTypes'
-import { LEFT, RIGHT } from '../constants/directions'
+import { LEFT, RIGHT, DOWN, UP } from '../constants/directions'
 import wire from './wire'
 
 const wiresNumber = 10
@@ -39,7 +39,7 @@ const reducer = (state = initialState, action) => {
     case MOVE_FOCUS: {
 
       switch (direction) {
-        
+
         case LEFT:
         case RIGHT:
           return state.map(
@@ -47,6 +47,33 @@ const reducer = (state = initialState, action) => {
               return wire(state[i], action)
             }
           )
+
+        case DOWN:
+          return state.map(
+            (item, i) => {
+              if (i === 9) {
+                return wire(state[i], {type: HAS_FOCUS, index: 0})
+              }
+              if (state[i].focusIndex > -1) {
+                return wire(state[i], {type: HAS_FOCUS, index: -1})
+              }
+              if (i > 0 && state[i - 1].focusIndex > -1) {
+                return wire(state[i], {type: HAS_FOCUS, index: 0})
+              }
+              return state[i]
+            }
+          )
+
+        case UP:
+          return state.map(
+            (item, i) => {
+              if (i < 9 && state[i + 1].focusIndex > -1) {
+                return wire(state[i], {type: HAS_FOCUS, index: 0})
+              }
+              return state[i]
+            }
+          )
+
 
         default:
           return state.map(
