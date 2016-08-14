@@ -3,7 +3,10 @@ import { LEFT, RIGHT, DOWN, UP } from '../constants/directions'
 import wire from './wire'
 
 const wiresNumber = 10
-const initialState = Array.from(Array(wiresNumber)).map(i => wire(undefined, {type: NOOP}))
+const wiresRadix = 10
+const wireReducer = wire(wiresRadix)
+
+const initialState = Array.from(Array(wiresNumber)).map(i => wireReducer(undefined, {type: NOOP}))
 
 const reducer = (state = initialState, action) => {
 
@@ -16,7 +19,7 @@ const reducer = (state = initialState, action) => {
       return state.map(
         (_, i, state) => {
           if (i === wireIndex) {
-            return wire(state[i], action)
+            return wireReducer(state[i], action)
           } else {
             return state[i]
           }
@@ -28,9 +31,9 @@ const reducer = (state = initialState, action) => {
       return state.map(
         (_, i, state) => {
           if (i === wireIndex) {
-            return wire(state[i], action)
+            return wireReducer(state[i], action)
           } else {
-            return wire(state[i], {type: HAS_FOCUS, index: -1})
+            return wireReducer(state[i], {type: HAS_FOCUS, index: -1})
           }
         }
       )
@@ -43,13 +46,13 @@ const reducer = (state = initialState, action) => {
           return state[i]
         }
         if (i > 0 && state[i - 1].focusIndex > -1) {
-          return wire(state[i], {type: HAS_FOCUS, index: 0})
+          return wireReducer(state[i], {type: HAS_FOCUS, index: 0})
         }
-        return wire(state[i], {type: HAS_FOCUS, index: -1})
+        return wireReducer(state[i], {type: HAS_FOCUS, index: -1})
       }
 
       const focusOnLastWireLine = (_, i, state) =>
-        wire(state[i], {
+        wireReducer(state[i], {
           type: HAS_FOCUS,
           index: (i === state.length - 1) ? 0 : -1
         })
@@ -60,7 +63,7 @@ const reducer = (state = initialState, action) => {
 
         case LEFT:
         case RIGHT:
-          return state.map((_, i, state) => wire(state[i], action))
+          return state.map((_, i, state) => wireReducer(state[i], action))
 
         case DOWN:
           return state.map(focusOnWireLine)
@@ -70,7 +73,7 @@ const reducer = (state = initialState, action) => {
 
         default:
           return state.map(
-            (item, i) => wire(state[i], {type: HAS_FOCUS, index: -1})
+            (item, i) => wireReducer(state[i], {type: HAS_FOCUS, index: -1})
           )
 
       }
@@ -79,26 +82,26 @@ const reducer = (state = initialState, action) => {
     case CLEAR_FOCUS:
     case SET_ZERO:
       return state.map(
-        (_, i, state) => wire(state[i], action)
+        (_, i, state) => wireReducer(state[i], action)
       )
 
     case RANDOM:
-      const randomNumber = Math.floor(Math.random() * state.length * 10)
-      const units = randomNumber % 10
-      const dozens = Math.floor(randomNumber/10)
+      const randomNumber = Math.floor(Math.random() * state.length * wiresRadix)
+      const units = randomNumber % wiresRadix
+      const bases = Math.floor(randomNumber/wiresRadix)
 
       return state.map(
         (_, i, state) => {
 
-          if (i < dozens) {
-            return wire(state[i], {type: INCREMENT, index: 0})
+          if (i < bases) {
+            return wireReducer(state[i], {type: INCREMENT, index: 0})
           }
 
-          if (i === dozens) {
-            return wire(state[i], {type: INCREMENT, index: 10 - units})
+          if (i === bases) {
+            return wireReducer(state[i], {type: INCREMENT, index: wiresRadix - units})
           }
 
-          return wire(state[i], {type: SET_ZERO})
+          return wireReducer(state[i], {type: SET_ZERO})
         }
       )
 
