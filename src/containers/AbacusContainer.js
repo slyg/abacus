@@ -5,16 +5,16 @@ import WireContainer from './WireContainer'
 const mapStateToProps = ({wiresCollection}) => ({wiresCollection});
 
 const colorPairs = [
-  [ 'wood',    'wood2'   ],
-  [ 'wood',    'wood2'   ],
-  [ 'yellow',  'yellow2' ],
-  [ 'yellow',  'yellow2' ],
-  [ 'red',     'red2'    ],
-  [ 'red',     'red2'    ],
-  [ 'green',   'green2'  ],
-  [ 'green',   'green2'  ],
-  [ 'blue',    'blue2'   ],
-  [ 'blue',    'blue2'   ],
+  [ 'wood',     'red'    ],
+  [ 'wood',     'red'    ],
+  [ 'wood',     'red'    ],
+  [ 'wood',     'red'    ],
+  [ 'wood',     'red'    ],
+  [ 'wood',     'blue'   ],
+  [ 'wood',     'blue'   ],
+  [ 'wood',     'blue'   ],
+  [ 'wood',     'blue'   ],
+  [ 'wood',     'blue'   ],
 ]
 
 function* colorPairsGenerator() {
