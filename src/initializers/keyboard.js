@@ -33,7 +33,7 @@ const initializer = store => {
         break
       default:
     }
-}
+  }
 
 }
 
