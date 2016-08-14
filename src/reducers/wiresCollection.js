@@ -84,7 +84,7 @@ const reducer = (state = initialState, action) => {
       )
 
     case RANDOM:
-      const randomNumber = Math.floor(Math.random() * 100)
+      const randomNumber = Math.floor(Math.random() * state.length * 10)
       const units = randomNumber % 10
       const dozens = Math.floor(randomNumber/10)
 
