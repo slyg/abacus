@@ -14,20 +14,20 @@ const reducer = (state = initialState, action) => {
   switch (type) {
 
     case INCREMENT: {
-      const ballsToMove = state.left - index
+      const pearlsToMove = state.left - index
       return {
         ...state,
-        left: state.left - ballsToMove,
-        right: state.right + ballsToMove,
+        left: state.left - pearlsToMove,
+        right: state.right + pearlsToMove,
       }
     }
 
     case DECREMENT: {
-      const ballsToMove = 1 + index - state.left
+      const pearlsToMove = 1 + index - state.left
       return {
         ...state,
-        left: state.left + ballsToMove,
-        right: state.right - ballsToMove,
+        left: state.left + pearlsToMove,
+        right: state.right - pearlsToMove,
       }
     }
 
