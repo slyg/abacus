@@ -6,17 +6,19 @@
 }
 
 .Wire-cell-rail {
-  height: 2px;
-  background-color: #999;
+  background-color: #333;
+  box-shadow: inset 0 0 3px #000;
+  border-radius: 3px;
+  height: 8px;
   position: absolute;
-  top: 20px;
+  top: 18px;
   width: 100%;
 }
 
 .Wire-cell {
   width: 42px;
   height: 42px;
-  border: 2px solid #999;
+  border: 0px solid #999;
   border-radius: 20px;
   margin: 0 5px 5px 0;
   background-color: #666;
@@ -36,16 +38,18 @@
   transform: translate3d(440px, 0px, 0px);
 }
 
-.Wire-cell-color-wood      { background-color: #FFE5BC; }
-.Wire-cell-color-wood2     { background-color: #FFDBA3; }
-.Wire-cell-color-yellow    { background-color: #FFCB46; }
-.Wire-cell-color-yellow2   { background-color: #CCA238; }
-.Wire-cell-color-red       { background-color: #FF6946; }
-.Wire-cell-color-red2      { background-color: #CC5438; }
-.Wire-cell-color-green     { background-color: #82D736; }
-.Wire-cell-color-green2    { background-color: #73BD30; }
-.Wire-cell-color-blue      { background-color: #3EA1CB; }
-.Wire-cell-color-blue2     { background-color: #2E7998; }
+.Wire-cell-color-wood      { background: radial-gradient(circle farthest-side at 0 0%, #fff -50%, #FFE5BC); }
+.Wire-cell-color-wood2     { background: radial-gradient(circle farthest-side at 0 0%, #fff -50%, #FFDBA3); }
+.Wire-cell-color-yellow    { background: radial-gradient(circle farthest-side at 0 0%, #fff -50%, #FFCB46); }
+.Wire-cell-color-yellow2   { background: radial-gradient(circle farthest-side at 0 0%, #fff -50%, #CCA238); }
+.Wire-cell-color-red       { background: radial-gradient(circle farthest-side at 0 0%, #fff -50%, #FF6946); }
+.Wire-cell-color-red2      { background: radial-gradient(circle farthest-side at 0 0%, #fff -50%, #CC5438); }
+.Wire-cell-color-pink      { background: radial-gradient(circle farthest-side at 0 0%, #fff -50%, #cb3e7b); }
+.Wire-cell-color-pink2     { background: radial-gradient(circle farthest-side at 0 0%, #fff -50%, #b93870); }
+.Wire-cell-color-green     { background: radial-gradient(circle farthest-side at 0 0%, #fff -50%, #82D736); }
+.Wire-cell-color-green2    { background: radial-gradient(circle farthest-side at 0 0%, #fff -50%, #73BD30); }
+.Wire-cell-color-blue      { background: radial-gradient(circle farthest-side at 0 0%, #fff -50%, #3EA1CB); }
+.Wire-cell-color-blue2     { background: radial-gradient(circle farthest-side at 0 0%, #fff -50%, #2E7998); }
 
 /*
  * Reponsive - http://stephen.io/mediaqueries/
