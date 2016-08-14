@@ -50,7 +50,7 @@ const reducer = (state = initialState, action) => {
         return state
       }
 
-      let newFocusIndex;
+      let newFocusIndex
 
       switch (direction) {
         case LEFT:

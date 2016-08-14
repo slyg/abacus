@@ -6,6 +6,6 @@ import sound from './sound'
 const reducer = combineReducers({
   wiresCollection,
   sound,
-});
+})
 
 export default reducer

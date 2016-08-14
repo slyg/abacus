@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import WireContainer from './WireContainer'
 
-const mapStateToProps = ({wiresCollection}) => ({wiresCollection});
+const mapStateToProps = ({wiresCollection}) => ({wiresCollection})
 
 const colorPairs = [
   [ 'wood',     'red'    ],
@@ -23,7 +23,7 @@ function* colorPairsGenerator() {
 }
 
 const Abacus = ({wiresCollection}) => {
-  const getNextColorPair = colorPairsGenerator();
+  const getNextColorPair = colorPairsGenerator()
   return (
     <div>
       {wiresCollection.map( (wire, wireIndex) => {
