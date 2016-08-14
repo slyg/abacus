@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import Wire from '../components/Wire'
-import { increment, decrement, hasFocus } from '../actionsCreators'
+import { increment, decrement, hasFocus } from '../actionCreators'
 
 const mapStateToProps = ({wiresCollection}, {wireIndex}) =>
   ({...wiresCollection[wireIndex]})

@@ -1,4 +1,4 @@
-import { moveFocus, randomize, randomizeStorm, setZero, clearFocus } from '../actionsCreators'
+import { moveFocus, randomize, randomizeStorm, setZero, clearFocus } from '../actionCreators'
 import { UP, DOWN, LEFT, RIGHT } from '../constants/directions'
 
 const initializer = store => {

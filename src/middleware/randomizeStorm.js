@@ -1,5 +1,5 @@
 import { RANDOM_STORM } from '../constants/actionTypes'
-import { randomize } from '../actionsCreators'
+import { randomize } from '../actionCreators'
 
 const middleware = store => next => action => {
 

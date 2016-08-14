@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { setZero, randomize, randomizeStorm, toggleMute } from '../actionsCreators'
+import { setZero, randomize, randomizeStorm, toggleMute } from '../actionCreators'
 import Nav from '../components/Nav'
 
 const mapStateToProps = ({sound}) => ({soundMuted: sound.muted})
