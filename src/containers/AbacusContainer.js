@@ -4,7 +4,7 @@ import WireContainer from './WireContainer'
 
 const mapStateToProps = ({wiresCollection}) => ({wiresCollection});
 
-const colorNames = [
+const colorPairs = [
   [ 'wood',    'wood2'   ],
   [ 'wood',    'wood2'   ],
   [ 'yellow',  'yellow2' ],
@@ -17,11 +17,17 @@ const colorNames = [
   [ 'blue',    'blue2'   ],
 ]
 
+function* colorPairsGenerator() {
+  yield* colorPairs
+  yield* colorPairsGenerator()
+}
+
 const Abacus = ({wiresCollection}) => {
+  const getNextColorPair = colorPairsGenerator();
   return (
     <div>
       {wiresCollection.map( (wire, wireIndex) => {
-        const [colorNameLeft, colorNameRight] = colorNames[wireIndex]
+        const [colorNameLeft, colorNameRight] = getNextColorPair.next().value
         return <WireContainer {...{colorNameLeft, colorNameRight, wireIndex, key: wireIndex}} />
       })}
     </div>
