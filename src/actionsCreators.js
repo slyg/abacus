@@ -6,6 +6,7 @@ import
   , RANDOM_STORM
   , TOGGLE_MUTE
   , MOVE_FOCUS
+  , CLEAR_FOCUS
   , HAS_FOCUS
   } from './constants/actionTypes'
 
@@ -41,6 +42,10 @@ export const moveFocus = (direction, toTheEdge) => ({
   type: MOVE_FOCUS,
   direction,
   toTheEdge
+})
+
+export const clearFocus = () => ({
+  type: CLEAR_FOCUS
 })
 
 export const hasFocus = wireIndex => index => ({

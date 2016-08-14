@@ -1,4 +1,4 @@
-import { moveFocus, randomize, randomizeStorm, reset } from '../actionsCreators'
+import { moveFocus, randomize, randomizeStorm, reset, clearFocus } from '../actionsCreators'
 import { UP, DOWN, LEFT, RIGHT } from '../constants/directions'
 
 const initializer = store => {
@@ -7,6 +7,9 @@ const initializer = store => {
 
   document.onkeydown = function({keyCode, shiftKey}) {
     switch (keyCode) {
+      case 27:
+        dispatch(clearFocus())
+        break
       case 37:
         dispatch(moveFocus(LEFT, shiftKey))
         break

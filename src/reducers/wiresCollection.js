@@ -1,4 +1,4 @@
-import { INCREMENT, DECREMENT, RESET, RANDOM, NOOP, HAS_FOCUS, MOVE_FOCUS } from '../constants/actionTypes'
+import { INCREMENT, DECREMENT, RESET, RANDOM, NOOP, HAS_FOCUS, CLEAR_FOCUS, MOVE_FOCUS } from '../constants/actionTypes'
 import { LEFT, RIGHT, DOWN, UP } from '../constants/directions'
 import wire from './wire'
 
@@ -76,11 +76,10 @@ const reducer = (state = initialState, action) => {
       }
     }
 
+    case CLEAR_FOCUS:
     case RESET:
       return state.map(
-        (_, i, state) => {
-          return wire(state[i], action)
-        }
+        (_, i, state) => wire(state[i], action)
       )
 
     case RANDOM:
