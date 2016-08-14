@@ -1,4 +1,4 @@
-import { moveFocus, randomize, randomizeStorm, reset, clearFocus } from '../actionsCreators'
+import { moveFocus, randomize, randomizeStorm, setZero, clearFocus } from '../actionsCreators'
 import { UP, DOWN, LEFT, RIGHT } from '../constants/directions'
 
 const initializer = store => {
@@ -29,7 +29,7 @@ const initializer = store => {
         dispatch(randomizeStorm())
         break
       case 90:
-        dispatch(reset())
+        dispatch(setZero())
         break
       default:
     }

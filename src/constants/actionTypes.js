@@ -1,6 +1,6 @@
 export const INCREMENT      = 'INCREMENT'
 export const DECREMENT      = 'DECREMENT'
-export const RESET          = 'RESET'
+export const SET_ZERO          = 'SET_ZERO'
 export const NOOP           = 'NOOP'
 export const RANDOM         = 'RANDOM'
 export const RANDOM_STORM   = 'RANDOM_STORM'

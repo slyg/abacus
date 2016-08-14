@@ -1,7 +1,7 @@
 import
   { INCREMENT
   , DECREMENT
-  , RESET
+  , SET_ZERO
   , RANDOM
   , RANDOM_STORM
   , TOGGLE_MUTE
@@ -22,8 +22,8 @@ export const decrement = wireIndex => index => ({
   index
 })
 
-export const reset = () => ({
-  type: RESET
+export const setZero = () => ({
+  type: SET_ZERO
 })
 
 export const randomize = () => ({

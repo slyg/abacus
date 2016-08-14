@@ -1,4 +1,4 @@
-import { INCREMENT, DECREMENT, RESET, HAS_FOCUS, MOVE_FOCUS, CLEAR_FOCUS } from '../constants/actionTypes'
+import { INCREMENT, DECREMENT, SET_ZERO, HAS_FOCUS, MOVE_FOCUS, CLEAR_FOCUS } from '../constants/actionTypes'
 import { LEFT, RIGHT } from '../constants/directions'
 
 const initialState = {
@@ -79,7 +79,7 @@ const reducer = (state = initialState, action) => {
       }
     }
 
-    case RESET:
+    case SET_ZERO:
       return {
         ...initialState,
         focusIndex: state.focusIndex

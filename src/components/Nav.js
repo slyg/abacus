@@ -19,10 +19,10 @@ const SoundIcon = ({muted}) => {
 
 }
 
-const Nav = ({reset, randomize, randomizeStorm, toggleMute, soundMuted}) => {
+const Nav = ({setZero, randomize, randomizeStorm, toggleMute, soundMuted}) => {
   return (
     <nav className="Nav">
-      <button onClick={() => {reset()}} ><u>Z</u>ero</button>
+      <button onClick={() => {setZero()}} ><u>Z</u>ero</button>
       <button onClick={() => {randomize()}} ><u>R</u>andom</button>
       <button onClick={() => {randomizeStorm()}} ><u>S</u>torm</button>
       <button onClick={() => {toggleMute()}} title={soundMuted ? 'Unmute' :  'Mute'}>
