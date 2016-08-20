@@ -1,5 +1,5 @@
-import { INCREMENT, DECREMENT, SET_ZERO, HAS_FOCUS, MOVE_FOCUS, CLEAR_FOCUS } from '../constants/actionTypes'
-import { LEFT, RIGHT } from '../constants/directions'
+import { INCREMENT, DECREMENT, SET_ZERO, HAS_FOCUS, MOVE_FOCUS, CLEAR_FOCUS } from '../../constants/actionTypes'
+import { LEFT, RIGHT } from '../../constants/directions'
 
 const reducer = radix => {
 

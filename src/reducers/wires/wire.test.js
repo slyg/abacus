@@ -1,5 +1,5 @@
 import reducer from './wire'
-import { INCREMENT, DECREMENT, NOOP } from '../constants/actionTypes'
+import { INCREMENT, DECREMENT, NOOP } from '../../constants/actionTypes'
 import { expect } from 'chai'
 
 describe('wire reducer', () => {

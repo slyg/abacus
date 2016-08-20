@@ -2,14 +2,14 @@ import React from 'react'
 import { connect } from 'react-redux'
 import WireContainer from './WireContainer'
 
-const mapStateToProps = ({wiresCollection}) => ({wiresCollection})
+const mapStateToProps = ({wires}) => ({wiresCollection: wires.collection})
 
 const colorPairs = [
-  [ 'wood2',     'blue'    ],
-  [ 'wood2',     'blue'    ],
-  [ 'wood2',     'blue'    ],
-  [ 'wood2',     'blue'    ],
-  [ 'wood2',     'blue'    ],
+  [ 'wood2',     'blue'   ],
+  [ 'wood2',     'blue'   ],
+  [ 'wood2',     'blue'   ],
+  [ 'wood2',     'blue'   ],
+  [ 'wood2',     'blue'   ],
   [ 'wood2',     'pink'   ],
   [ 'wood2',     'pink'   ],
   [ 'wood2',     'pink'   ],

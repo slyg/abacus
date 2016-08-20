@@ -8,6 +8,8 @@ import
   , MOVE_FOCUS
   , CLEAR_FOCUS
   , HAS_FOCUS
+  , INCREMENT_WIRES_NUMBER
+  , DECREMENT_WIREs_NUMBER
   } from './constants/actionTypes'
 
 export const increment = wireIndex => index => ({
@@ -52,4 +54,12 @@ export const hasFocus = wireIndex => index => ({
   type: HAS_FOCUS,
   wireIndex,
   index
+})
+
+export const incrementWiresNumber = () => ({
+  type: INCREMENT_WIRES_NUMBER
+})
+
+export const decrementWiresNumber = () => ({
+  type: DECREMENT_WIREs_NUMBER
 })

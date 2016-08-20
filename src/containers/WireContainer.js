@@ -3,8 +3,8 @@ import { bindActionCreators } from 'redux'
 import Wire from '../components/Wire'
 import { increment, decrement, hasFocus } from '../actionCreators'
 
-const mapStateToProps = ({wiresCollection}, {wireIndex}) =>
-  ({...wiresCollection[wireIndex]})
+const mapStateToProps = ({wires}, {wireIndex}) =>
+  ({...wires.collection[wireIndex]})
 
 const mapDispatchToProps = (dispatch, {wireIndex}) =>
   bindActionCreators({

@@ -19,9 +19,11 @@ const SoundIcon = ({muted}) => {
 
 }
 
-const Nav = ({setZero, randomize, randomizeStorm, toggleMute, soundMuted}) => {
+const Nav = ({setZero, randomize, randomizeStorm, toggleMute, soundMuted, incrementWiresNumber, decrementWiresNumber}) => {
   return (
     <nav className="Nav">
+      <button onClick={() => {incrementWiresNumber()}} >+</button>
+      <button onClick={() => {decrementWiresNumber()}} >-</button>
       <button onClick={() => {setZero()}} ><u>Z</u>ero</button>
       <button onClick={() => {randomize()}} ><u>R</u>andom</button>
       <button onClick={() => {randomizeStorm()}} ><u>S</u>torm</button>

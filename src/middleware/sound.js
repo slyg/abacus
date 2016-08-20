@@ -29,7 +29,7 @@ const middleware = store => next => action => {
       break
 
     case SET_ZERO:
-      if(store.getState().wiresCollection.some(({right}) => right > 0)) {
+      if(store.getState().wires.collection.some(({right}) => right > 0)) {
         tickSound()
       }
       break

@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux'
 
-import wiresCollection from './wiresCollection'
+import wires from './wires'
 import sound from './sound'
 
 const reducer = combineReducers({
-  wiresCollection,
+  wires,
   sound,
 })
 
