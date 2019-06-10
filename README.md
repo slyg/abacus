@@ -1,6 +1,6 @@
 # Abacus
 
-Small implementation of an ikea-like 10 x 10 abacus for my daugher.
+Small implementation of an ikea-like 10 x 10 abacus for my daughter.
 
 Project is deployed at https://abacus.surge.sh/
 
